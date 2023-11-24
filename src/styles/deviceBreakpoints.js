@@ -1,0 +1,15 @@
+export const DEVICE_BREAKPOINTS = {
+    XS: 320,
+    SM: 425,
+    MD: 768,
+    LG: 1024,
+    XL: 1280
+}
+
+export const DEVICE_BREAKPOINTS_PIXELS = {
+    XS: `${DEVICE_BREAKPOINTS.XS}px`,
+    SM: `${DEVICE_BREAKPOINTS.SM}px`,
+    MD: `${DEVICE_BREAKPOINTS.MD}px`,
+    LG: `${DEVICE_BREAKPOINTS.LG}px`,
+    XL: `${DEVICE_BREAKPOINTS.XL}px`
+}
