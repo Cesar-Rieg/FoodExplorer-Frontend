@@ -42,6 +42,7 @@ export function Editar({ isAdmin }) {
   let [ novoIngrediente, setNovoIngrediente ] = useState("");
 
   let [loading, setLoading] = useState(false);
+  let [loadingDelete, setLoadingDelete] = useState(false);
 
   // UseEffect buscar produto
   useEffect(() => {
@@ -137,7 +138,7 @@ export function Editar({ isAdmin }) {
     let confirm = window.confirm("Deseja realmente excluir o produto?");
   
     if (confirm) {
-      setLoading(true);
+      setLoadingDelete(true);
 
       try {
         await API.delete(`/produtos/${produtoId}`);
@@ -148,7 +149,7 @@ export function Editar({ isAdmin }) {
         NotifyError({mensagem: mensagemDeErro});
       } 
       finally {
-        setLoading(false);
+        setLoadingDelete(false);
       }
     }
   }
@@ -292,7 +293,7 @@ export function Editar({ isAdmin }) {
                 className="excluir" 
                 title="Excluir produto" 
                 onClick={handleExcluirProduto} 
-                loading={loading}
+                loading={loadingDelete}
               />
 
               <Button
